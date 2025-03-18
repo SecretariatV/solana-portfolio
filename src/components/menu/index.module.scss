@@ -1,0 +1,62 @@
+@use "@styles/variables" as *;
+
+.hamburger {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 1px;
+    background: $pink-300;
+    transition: all 0.2s;
+  }
+
+  span {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 20px;
+    height: 6px;
+    margin: 2px 0;
+    &:before,
+    &:after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: $neutral-200;
+      transition: width 0.2s, all 0.2s;
+    }
+    &:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    &:before {
+      background: lighten($pink-300, 3);
+    }
+  }
+  &.active {
+    span {
+      &:before,
+      &:after {
+        width: 12px;
+      }
+    }
+  }
+}

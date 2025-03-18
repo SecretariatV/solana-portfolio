@@ -1,0 +1,33 @@
+@use "variables" as *;
+
+:root {
+  --primary-bg: #{$neutral-800};
+  --offset-bg: #{$neutral-600};
+  --title-bg: #{$neutral-600};
+  --primary-highlight: #{$pink-100};
+  --secondary-highlight: #{$purple-100};
+  --third-highlight: #{$orange-100};
+  --fourth-highlight: #{$green-100};
+  --primary-text: #{$neutral-100};
+  --secondary-text: #{$neutral-300};
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: Inter;
+  outline: none;
+
+  transition: all 0.2s;
+}
+
+body {
+  background: var(--primary-bg);
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+}
